@@ -10,7 +10,7 @@ env:
 
 jobs:
   build-net-core:
-    runs-on: CentOS 7.3
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Build .Net Core
@@ -39,7 +39,7 @@ jobs:
   pull-docker:
     needs: [build-net-core]
     name: Pull Docker
-    runs-on: CentOS 7.3
+    runs-on: ubuntu-latest
     steps:
       - name: Deploy
         uses: appleboy/ssh-action@master
